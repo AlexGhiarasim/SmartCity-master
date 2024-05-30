@@ -3,11 +3,12 @@
     display:flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 200px;
     background: #fff;
     padding-bottom: 30px;
-    width: 600px;
-
+    width: 100%;
+    grid-column: 1;
+    opacity: 0.95;
+    border-radius: 8px;
 }
 
 .header{

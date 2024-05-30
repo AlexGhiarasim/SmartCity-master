@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.box{
+  height: 709px;
+  width: 91vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 60px;
+}
+
+.app-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1000px;
+}
