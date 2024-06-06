@@ -73,3 +73,5 @@ g
 7src/main/java/SmartCity/service/ParkingSpotService.java,7\b\7b8ad733294bdf56427524be32e78f706c955b8b
 `
 0src/main/java/SmartCity/service/WallService.java,1\b\1b4e48d3321e51300af007820d919d12e3af0299
+e
+5src/main/java/SmartCity/dto/ParkingLotDetailsDTO.java,5\9\59720547c5c618eceb9b15f08cec7acac851b909

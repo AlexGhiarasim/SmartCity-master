@@ -23,7 +23,8 @@ public class ParkingLot {
 
     @Column(nullable = false)
     private String name;
-
+    private int x;//intrarea
+    private int y;//intrarea
     @OneToMany(mappedBy = "parkingLot", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ParkingSpot> parkingSpots;
 

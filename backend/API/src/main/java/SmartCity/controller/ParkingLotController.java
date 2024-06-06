@@ -1,6 +1,7 @@
 package SmartCity.controller;
 
 import SmartCity.dto.ParkingLotDTO;
+import SmartCity.dto.ParkingLotDetailsDTO;
 import SmartCity.service.ParkingLotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ public class ParkingLotController {
     @Autowired
     private ParkingLotService parkingLotService;
 
-    @PostMapping("/create")
+    @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ParkingLotDTO> createParkingLot(@RequestBody ParkingLotDTO parkingLotDTO) {
         ParkingLotDTO createdParkingLot = parkingLotService.createParkingLot(parkingLotDTO);
@@ -32,10 +33,10 @@ public class ParkingLotController {
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ParkingLotDTO> getParkingLotById(@PathVariable Long id) {
-        ParkingLotDTO parkingLotDTO = parkingLotService.getParkingLotById(id);
-        if (parkingLotDTO != null) {
-            return ResponseEntity.ok(parkingLotDTO);
+    public ResponseEntity<ParkingLotDetailsDTO> getParkingLotById(@PathVariable Long id) {
+        ParkingLotDetailsDTO parkingLotDetailsDTO = parkingLotService.getParkingLotById(id);
+        if (parkingLotDetailsDTO != null) {
+            return ResponseEntity.ok(parkingLotDetailsDTO);
         }
         return ResponseEntity.notFound().build();
     }

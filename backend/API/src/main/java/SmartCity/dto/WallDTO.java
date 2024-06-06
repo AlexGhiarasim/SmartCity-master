@@ -31,4 +31,5 @@ public class WallDTO {
         this.endX = endX;
         this.endY = endY;
     }
+
 }

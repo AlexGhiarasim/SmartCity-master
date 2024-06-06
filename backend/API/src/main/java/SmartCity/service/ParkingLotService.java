@@ -1,9 +1,12 @@
 package SmartCity.service;
 
 
-import SmartCity.dto.ParkingLotDTO;
+import SmartCity.dto.*;
 import SmartCity.model.business.ParkingLot;
+import SmartCity.repository.CorridorRepository;
 import SmartCity.repository.ParkingLotRepository;
+import SmartCity.repository.ParkingSpotRepository;
+import SmartCity.repository.WallRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +19,12 @@ public class ParkingLotService {
 
     @Autowired
     private ParkingLotRepository parkingLotRepository;
+    @Autowired
+    private ParkingSpotRepository parkingSpotRepository;
+    @Autowired
+    private WallRepository wallRepository;
+    @Autowired
+    private CorridorRepository corridorRepository;
 
     public ParkingLotDTO createParkingLot(ParkingLotDTO parkingLotDTO) {
         ParkingLot parkingLot = new ParkingLot();
@@ -31,9 +40,24 @@ public class ParkingLotService {
                 .collect(Collectors.toList());
     }
 
-    public ParkingLotDTO getParkingLotById(Long id) {
-        Optional<ParkingLot> parkingLotOptional = parkingLotRepository.findById(id);
-        return parkingLotOptional.map(lot -> new ParkingLotDTO(lot.getId(), lot.getName())).orElse(null);
+    public ParkingLotDetailsDTO getParkingLotById(Long id) {
+        ParkingLot parkingLot = parkingLotRepository.findById(id).orElse(null);
+        if (parkingLot != null) {
+            List<ParkingSpotDTO> parkingSpotDTOs = parkingLot.getParkingSpots().stream()
+                    .map(spot -> new ParkingSpotDTO(spot.getId(), spot.isOccupied(), spot.getX(), spot.getY()))
+                    .collect(Collectors.toList());
+
+            List<WallDTO> wallDTOs = parkingLot.getWalls().stream()
+                    .map(wall -> new WallDTO(wall.getId(), wall.getStartX(), wall.getStartY(), wall.getEndX(), wall.getEndY()))
+                    .collect(Collectors.toList());
+
+            List<CorridorDTO> corridorDTOs = parkingLot.getCorridors().stream()
+                    .map(corridor -> new CorridorDTO(corridor.getId(), corridor.getStartX(), corridor.getStartY(), corridor.getEndX(), corridor.getEndY()))
+                    .collect(Collectors.toList());
+
+            return new ParkingLotDetailsDTO(parkingLot.getId(), parkingLot.getName(), parkingSpotDTOs, wallDTOs, corridorDTOs);
+        }
+        return null;
     }
 
     public ParkingLotDTO updateParkingLot(Long id, ParkingLotDTO parkingLotDTO) {
