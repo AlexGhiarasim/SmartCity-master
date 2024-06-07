@@ -68,7 +68,7 @@ public class SwaggerConfiguration {
 
     Contact contact = new Contact(
             "Andra Ciobanu",
-            "http://localhost:8666/", // Localhost URL
+            "http://localhost:8668/", // Localhost URL
             "ciobanuandramaria@gmail.com");
     ApiInfo apiInfo = new ApiInfo(
             "FII - Andra Ciobanu - SmartCity API",
@@ -77,6 +77,6 @@ public class SwaggerConfiguration {
             "http://localhost:8666/", // Localhost URL
             contact,
             "",
-            "http://localhost:8666/", // Localhost URL
+            "http://localhost:8667/", // Localhost URL
             List.of());
 }

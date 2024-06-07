@@ -1,4 +1,4 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿØöŸJ$a5ea69c4-6f2c-4942-a2df-c023ff017ee6
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿØöŸJ$b864f7c1-fddf-4e0f-86b7-e1fc99a64a80
 q
-java:S1128".Remove this unused import 'javax.persistence'.(¬£şç8çâÒîş1J$472e149b-e595-4a55-896a-b4014619e9ff
+java:S1128".Remove this unused import 'javax.persistence'.(¬£şç8çâÒîş1J$ad0b63b5-d351-4606-adfb-6626e6a3cd4c

@@ -55,7 +55,7 @@ public class ParkingLotService {
                     .map(corridor -> new CorridorDTO(corridor.getId(), corridor.getStartX(), corridor.getStartY(), corridor.getEndX(), corridor.getEndY()))
                     .collect(Collectors.toList());
 
-            return new ParkingLotDetailsDTO(parkingLot.getId(), parkingLot.getName(), parkingSpotDTOs, wallDTOs, corridorDTOs);
+            return new ParkingLotDetailsDTO(parkingLot.getId(), parkingLot.getName(), parkingLot.getX(), parkingLot.getY(), parkingSpotDTOs, wallDTOs, corridorDTOs);
         }
         return null;
     }

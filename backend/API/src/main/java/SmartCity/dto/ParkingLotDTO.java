@@ -18,8 +18,6 @@ public class ParkingLotDTO {
     private Long id;
 
     private String name;
-    private int x;//intrarea
-    private int y;//intrarea
 
     private List<ParkingSpot> parkingSpots;
 

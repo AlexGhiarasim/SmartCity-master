@@ -1,6 +1,8 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¿›8ù§ çş1J$06606317-6ccc-43c3-bf9b-52f3f760d0cc
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¿›8ªæ•ÿ1J$12bda7ba-b026-4604-9e2b-9e45c77c7b58
 …
-java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞ8½¬çş1J$1fa0b812-a9c9-4d0c-9e30-6899ae68fef9
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞ8´æ•ÿ1J$df7ee114-702a-4ed5-9feb-26c44c04a08a
 …
-java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8¾¬çş1J$c27827c4-93b7-4519-bc0e-53604dd37bcd
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄŞ8µæ•ÿ1J$0b805b7f-0343-44e5-9ee2-98d3ffde7be1
+À
+java:S4601D"xReorder the URL patterns from most to less specific, the pattern "/img/ParkingAssets/**" should occurs before "/img/**".(£²ä¶úÿÿÿÿ8¼æ•ÿ1J$e0208206-0343-46cb-af9a-68c3f4dbb609

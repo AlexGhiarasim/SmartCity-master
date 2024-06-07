@@ -1,0 +1,12 @@
+
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Σαπµ8ήδΊ”ÿ1J$da1bbbab-4655-4caf-a88f-7f043a2c6f17
+“
+java:S1128	"PRemove this unused import 'org.springframework.web.bind.annotation.CrossOrigin'.(Ί΄Ρ†8—‚»”ÿ1J$68352601-87f9-41dd-a377-e40a179d8e9b
+–
+java:S1128"SRemove this unused import 'org.springframework.web.bind.annotation.RequestMapping'.(φ»Ώλ8—‚»”ÿ1J$6b66af36-56bf-4f19-81fd-ace86c3dffd6
+x
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªΊ»Ϊύÿÿÿÿ8—‚»”ÿ1J$9d3a9ea1-b18d-4973-bcd3-446ce60606b8
+s
+java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒό8—‚»”ÿ1J$70b7faa5-4463-4c66-a607-87332eb68662
+s
+java:S1128"0Remove this unused import 'java.nio.file.Paths'.(αθ°―8—‚»”ÿ1J$4ccb63af-66c2-4eaa-9533-4f1de1606638
