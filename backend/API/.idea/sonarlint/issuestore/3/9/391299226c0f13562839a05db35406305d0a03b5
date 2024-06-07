@@ -1,0 +1,14 @@
+
+r
+java:S3740:"/Provide the parametrized type for this generic.(›èÌâ8ëÌÑéş1J$cee80c02-a1a3-44f7-b694-82d5feee1494
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Óáğµ8–º¶çş1J$e7857916-f102-4839-a78b-ac425308cca6
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8”ÍÑéş1J$f4cfccc6-ede4-4ebf-860e-12989dff1f3c
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8•ÍÑéş1J$fee7b1b6-0785-4b18-89a2-a11b2af09e2b
+…
+java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞ8•ÍÑéş1J$c0c476ce-7ad9-4e44-b26c-537815b3786c
+i
+java:S1452%"&Remove usage of generic wildcard type.(—­è€8ÍÑéş1J$f2c8425b-3497-4ca5-bce3-a50eebae37e6
+n
+java:S1452-"&Remove usage of generic wildcard type.(éã°éúÿÿÿÿ8¢ÍÑéş1J$325698ee-7563-41b6-93da-917ec816bde7

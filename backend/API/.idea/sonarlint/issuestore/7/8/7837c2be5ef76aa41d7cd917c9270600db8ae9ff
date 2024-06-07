@@ -1,0 +1,8 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¿Ž›8ªæž•ÿ1J$12bda7ba-b026-4604-9e2b-9e45c77c7b58
+…
+java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄÞ8´æž•ÿ1J$df7ee114-702a-4ed5-9feb-26c44c04a08a
+…
+java:S6813""BRemove this field injection and use constructor injection instead.(êæÄÞ8µæž•ÿ1J$0b805b7f-0343-44e5-9ee2-98d3ffde7be1
+À
+java:S4601D"xReorder the URL patterns from most to less specific, the pattern "/img/ParkingAssets/**" should occurs before "/img/**".(£²ä¶úÿÿÿÿ8¼æž•ÿ1J$e0208206-0343-46cb-af9a-68c3f4dbb609
