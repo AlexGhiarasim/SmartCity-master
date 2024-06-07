@@ -1,0 +1,303 @@
+html, body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    
+    min-height: 100vh;
+}
+
+body {
+    background-color:   #9a99d5;
+}
+
+.header {
+    background: linear-gradient(#2A00B7, #42006C);
+    color: white;
+    text-align: center;
+    opacity: 0.86;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    letter-spacing: 1px; 
+    margin-left: 520px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 8fr 20fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    width: 95%;
+    margin: 20px auto;
+    margin-top: 3px;
+    margin-bottom: 90px;
+    flex-grow: 1; 
+    height: 760px;
+}
+
+.welcome-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbdafa;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.parking-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbdafa;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.parking-grid {
+    display: grid;
+    background-color: #eee;
+}
+
+.parking-grid img {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer {
+    background: linear-gradient(#2A00B7, #42006C);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+.h1, .h30, .h31, .h32 {
+    font-family: 'Playfair Display', serif;
+    text-align: center; 
+    margin: 20px 0; 
+}
+
+.h1 {
+    font-size: 36px; 
+    font-weight: 700;
+    color: #ffffff; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #584d6c, #1440059c); 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+        0 0 2px #544d9b,
+        0 0 3px #544d9b,
+        0 0 4px #544d9b, 
+        0 0 5px #544d9b, 
+}
+.h30, .h31, .h32 {
+    font-size: 20px; 
+    font-weight: 400; 
+    color:#00381a;
+}
+.h2{
+    font-size: 24px; 
+    font-weight: bold; 
+    color:#34208b;
+}
+
+#select-parking-btn {
+    font-family: 'Playfair Display', serif; 
+    font-size: 20px;
+    color: #fff; 
+    background-color: #28a745; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+#select-parking-btn:hover {
+    background-color: #218838; 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+
+#logout-link {
+    text-decoration: none; 
+    color: #ffffff; 
+    padding: 8px 16px; 
+    cursor: pointer; 
+    font-size: 27px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    letter-spacing: 1px; 
+    margin-left: 430px; 
+    transition: color 0.3s; 
+    color:#f3fff3;
+}
+
+#logout-link:hover {
+    color: #7059a5; 
+}
+.highlight {
+    transition: filter 0.3s ease;
+}
+.highlight:hover {
+    transition: 0.2s;
+    filter: brightness(140%);
+    opacity: 0.8;
+}
+
+.NumeParcare {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 800px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    letter-spacing: 1px;
+    color:#3c393c;
+    background-color: #dbdafa;
+    border-radius: 5px;
+}
+
+
+
+
+.modal1 {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content1 {
+    position: relative;
+}
+
+.close1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.small-modal1 {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 150px; /* Dimensiune mai mică */
+    height: 100px; /* Dimensiune mai mică */
+}
+
+.small-modal-content1 {
+    position: relative;
+    padding: 10px;
+    height: 100px;
+    text-align: center;
+}
+
+.small-close1 {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#select-loc-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+    height: 40px; 
+    padding: 5px 10px; 
+    transition: background-color 0.3s; /* Tranzitie pentru hover */
+}
+
+#select-loc-btn:hover {
+    background-color: #328a36; /* Schimbare culoare la hover */
+}
+
+
+#loc-text{
+    margin: 0;
+}
