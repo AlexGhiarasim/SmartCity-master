@@ -5,25 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a0ad381-2aad-40fd-88f5-63b9930bb370" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/java/SmartCity/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/java/SmartCity/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/java/SmartCity/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/java/SmartCity/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/js/LoginSignUpReqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/js/LoginSignUpReqs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/src/main/resources/static/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/SmartCity/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/SmartCity/controller/PageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/SmartCity/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/SmartCity/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/js/LoginSignUpReqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/js/LoginSignUpReqs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front&amp;back/API/target/classes/static/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/SmartCity-master.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/bottom - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/car.png" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/car.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/lot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/AuthController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +35,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2hZE8TgZGqo41F1LKKxwwrBTmcF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,7 +56,7 @@
     "Spring Boot.AppStarter.executor": "Run",
     "git-widget-placeholder": "myfront",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ghiar/Desktop/project",
+    "last_opened_file_path": "C:/Users/ghiar/Desktop/HospitalStocks-main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,7 +67,8 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="AppStarter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="smartcity" />
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="SmartCity.AppStarter" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,7 +91,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1717793039905</updated>
-      <workItem from="1717793040960" duration="13733000" />
+      <workItem from="1717793040960" duration="14169000" />
+      <workItem from="1717835383002" duration="72000" />
+      <workItem from="1717835498589" duration="85000" />
+      <workItem from="1717835595644" duration="48000" />
+      <workItem from="1717835654680" duration="119000" />
+      <workItem from="1717861918958" duration="21000" />
     </task>
     <servers />
   </component>

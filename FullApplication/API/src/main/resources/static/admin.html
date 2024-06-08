@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gestionare Parcări și Utilizatori</title>
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>🚘SmartCity - Iași🚘</h1>
+            <a href="index.html" id="logout-link">Logout</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="admin-section">
+            <h1 class="h1">Gestionare Parcări</h1>
+            <div class="parking-list">
+                <div class="parking-item">
+                    <span>Parcarea 1</span>
+                    <button class="modify-parking-btn">Modifică</button>
+                    <button class="delete-parking-btn">Șterge</button>
+                </div>
+                <div class="parking-item">
+                    <span>Parcarea 2</span>
+                    <button class="modify-parking-btn">Modifică</button>
+                    <button class="delete-parking-btn">Șterge</button>
+                </div>
+                <div class="parking-item">
+                    <span>Parcarea 3</span>
+                    <button class="modify-parking-btn">Modifică</button>
+                    <button class="delete-parking-btn">Șterge</button>
+                </div>
+                <!-- Add more parking items as needed -->
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <h1 class="h1">Gestionare Utilizatori</h1>
+            <div class="user-list">
+                <div class="user-item">
+                    <span>User 1</span>
+                    <button class="delete-user-btn">Șterge</button>
+                </div>
+                <div class="user-item">
+                    <span>User 2</span>
+                    <button class="delete-user-btn">Șterge</button>
+                </div>
+                <div class="user-item">
+                    <span>User 3</span>
+                    <button class="delete-user-btn">Șterge</button>
+                </div>
+                <div class="user-item">
+                    <span>User 4</span>
+                    <button class="delete-user-btn">Șterge</button>
+                </div>
+                <div class="user-item">
+                    <span>User 5</span>
+                    <button class="delete-user-btn">Șterge</button>
+                </div>
+                <!-- Add more user items as needed -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 SmartCity-Iași. Toate drepturile rezervate.</p>
+    </footer>
+
+    <!-- Parking Modal -->
+    <div id="parking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Modifică Parcarea</h2>
+            <input type="text" id="parking-intervals" placeholder="Ex: [3,3]-[3,7] R/D sau [4,2] - P">
+            <button id="save-parking-btn">Salvează</button>
+        </div>
+    </div>
+
+    <!-- User Modal -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Șterge Utilizator</h2>
+            <p>Ești sigur că vrei să ștergi acest utilizator?</p>
+            <button id="confirm-delete-user-btn">Șterge</button>
+        </div>
+    </div>
+
+    <script src="./js/admin.js"></script>
+</body>
+</html>

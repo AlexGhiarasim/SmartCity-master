@@ -16,6 +16,10 @@ class Road {
     }
 }
 
+let xFinish = -1
+let yFinish = -1
+let selectedPlace = false;
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const parkingGrid = document.getElementById("parking-grid");
@@ -81,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const images = {
-        'P': './img/ParkingAssets/imagine1.jfif',
+        'P': './img/ParkingAssets/parkingLot.png',
         'D': './img/ParkingAssets/road.png',
         'Z': './img/ParkingAssets/wall.png'
     };
@@ -104,9 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             img.src = images[matrix[i][j]];
             cell.appendChild(img);
+
+            cell.setAttribute('id', `${i}-${j}`);
+
             parkingGrid.appendChild(cell);
         }
     }
+
 
     const modal = document.getElementById("parking-modal");
     const btn = document.getElementById("select-parking-btn");
@@ -134,7 +142,18 @@ document.addEventListener("DOMContentLoaded", function () {
         smallModal1.style.display = "block";
         smallModal1.style.left = `${rect.left + window.scrollX}px`;
         smallModal1.style.top = `${rect.bottom + window.scrollY}px`;
+
+        const cellId = event.target.id || event.target.parentElement.id; // Verifică id-ul imaginii sau a div-ului părinte
+        console.log(cellId + " id")
+
+        const [x, y] = cellId.split('-');
+
+        xFinish = parseInt(x);
+        yFinish = parseInt(y);
     }
+
+
+
 
     span1.onclick = function () {
         smallModal1.style.display = "none";
@@ -148,6 +167,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
+
+    //  SELECT LOC PARCARE SI INITIEREA DRUMULUI
+
     const selectLocBtn = document.getElementById("select-loc-btn");
 
     selectLocBtn.onclick = function () {
@@ -155,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let rX = -1;
         let rY = -1;
         let foundR = false;
-
+    
         for (let i = 0; i < N && !foundR; i++) {
             if (matrix[i][0] === 'D') {
                 foundR = true;
@@ -167,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 rY = M - 1;
             }
         }
-
+    
         for (let j = 0; j < M && !foundR; j++) {
             if (matrix[0][j] === 'D') {
                 foundR = true;
@@ -179,21 +202,121 @@ document.addEventListener("DOMContentLoaded", function () {
                 rY = j;
             }
         }
+    
+        const mybody = {
+            xStart: rX,
+            yStart: rY,
+            xFinish: xFinish,
+            yFinish: yFinish
+        };
+    
+        let final = false;
+        let currentX = mybody.xStart;
+        let currentY = mybody.yStart;
+        let prevX = null;
+        let prevY = null;
+    
+        const carImages = {
+            up: './img/ParkingAssets/carOnRoad/carUp.jfif',
+            down: './img/ParkingAssets/carOnRoad/carDown.jfif',
+            left: './img/ParkingAssets/carOnRoad/carLeft.jfif',
+            right: './img/ParkingAssets/carOnRoad/carRight.jfif'
+        };
+    
+        const directionsCar = [
+            { dx: -1, dy: 0, img: carImages.up }, // sus
+            { dx: 1, dy: 0, img: carImages.down },  // jos
+            { dx: 0, dy: -1, img: carImages.left }, // stânga
+            { dx: 0, dy: 1, img: carImages.right }   // dreapta
+        ];
+    
+        let ShortestPathMatrix = [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ];
+    
         if (foundR) {
             const newImg = document.createElement('img');
-            newImg.src = './img/ParkingAssets/imagine1.jfif';
-            newImg.style.width = '100%';
-            newImg.style.height = '100%';
+    
+            function moveCar() {
+                for (let i = 0; i < ShortestPathMatrix.length; i++) {
+                    for (let j = 0; j < ShortestPathMatrix[i].length; j++) {
+                        if (ShortestPathMatrix[i][j] === 1) {
+                            const cellIndex = i * M + j;
+                            const cell = parkingGrid.children[cellIndex];
+                            cell.style.opacity = '1';
+                        }
+                    }
+                }
+    
+                if (prevX !== null && prevY !== null) {
+                    const prevCellIndex = prevX * M + prevY;
+                    const prevCell = parkingGrid.children[prevCellIndex];
+                    prevCell.innerHTML = ''; // Șterge conținutul celulei anterioare
+                    const prevImg = document.createElement('img');
+                    prevImg.src = './img/ParkingAssets/road.png'; // Înlocuiește cu calea către imaginea corespunzătoare
+                    prevImg.style.width = '100%';
+                    prevImg.style.height = '100%';
+                    prevCell.appendChild(prevImg);
+                }
+    
+                ShortestPathMatrix[currentX][currentY] = 0;
+    
+                const currentCellIndex = currentX * M + currentY;
+                const currentCell = parkingGrid.children[currentCellIndex];
+    
+                let carImg = document.createElement('img');
+                carImg.style.width = '100%';
+                carImg.style.height = '100%';
+                currentCell.innerHTML = '';
+                currentCell.appendChild(carImg);
+    
+                if ((currentX === mybody.xFinish && Math.abs(currentY - mybody.yFinish) === 1) ||
+                    (currentY === mybody.yFinish && Math.abs(currentX - mybody.xFinish) === 1)) {
+                    clearInterval(carMovementInterval);
+                    const finalCellIndex = mybody.xFinish * M + mybody.yFinish;
+                    const finalCell = parkingGrid.children[finalCellIndex];
+                    const finalImg = document.createElement('img');
+                    finalImg.src = './img/ParkingAssets/imagine1.jfif'; 
+                    finalImg.style.width = '100%';
+                    finalImg.style.height = '100%';
+                    finalCell.innerHTML = '';
+                    finalCell.appendChild(finalImg);
+                    carImg.src = './img/ParkingAssets/road.png'; 
+                    return;
+                }
+    
+                for (const dir of directionsCar) {
+                    const nextX = currentX + dir.dx;
+                    const nextY = currentY + dir.dy;
+                    if (nextX >= 0 && nextX < ShortestPathMatrix.length &&
+                        nextY >= 0 && nextY < ShortestPathMatrix[nextX].length &&
+                        ShortestPathMatrix[nextX][nextY] === 1) {
+                        prevX = currentX; // Actualizează poziția anterioară
+                        prevY = currentY;
+                        currentX = nextX;
+                        currentY = nextY;
+                        carImg.src = dir.img; // Setează imaginea mașinii pe baza direcției
+                        break;
+                    }
+                }
+            }
+    
+            const carMovementInterval = setInterval(moveCar, 500);
         }
-    }
-
-    function getNeighbors(x, y) {
-        const neighbors = [];
-        if (x - 1 >= 0) neighbors.push({ x: x - 1, y });
-        if (x + 1 < N) neighbors.push({ x: x + 1, y });
-        if (y - 1 >= 0) neighbors.push({ x, y: y - 1 });
-        if (y + 1 < M) neighbors.push({ x, y: y + 1 });
-        return neighbors;
-    }
-
+    };
+    
 });

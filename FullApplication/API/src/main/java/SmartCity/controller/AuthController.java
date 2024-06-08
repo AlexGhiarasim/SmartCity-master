@@ -41,6 +41,7 @@ public class AuthController {
                 .orElseGet(() -> getJwtResponseBy(null, loginRequest.getPassword()));
     }
 
+
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         String username = signUpRequest.getUsername();
@@ -59,5 +60,6 @@ public class AuthController {
         JwtResponse jwtResponse = jwtService.getJwtByCredentials(username, password);
         return ResponseEntity.ok(jwtResponse);
     }
+
 
 }
