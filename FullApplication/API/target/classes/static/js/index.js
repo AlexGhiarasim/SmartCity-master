@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         inputDiv.id = id;
 
         const inputImg = document.createElement('img');
-        inputImg.src = `./img/${type === 'password' ? 'password' : 'person'}.png`;
+        inputImg.src = `../static/img/${type === 'password' ? 'password' : 'person'}.png`;
         inputImg.alt = '';
 
         const input = document.createElement('input');
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
         inputDiv.id = id;
 
         const inputImg = document.createElement('img');
-        inputImg.src = './img/password.png';
+        inputImg.src = '../static/img/password.png';
         inputImg.alt = '';
 
         const input = document.createElement('input');

@@ -100,15 +100,42 @@ document.addEventListener('DOMContentLoaded', function () {
                     fetch('/api/v1/auth/signin', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'Authorization': 'Bearer <token>',
                         },
                         body: JSON.stringify(credentials)
                     })
                     .then(response => response.json())
                     .then(data => {
                         if (data.token) {
-                            document.cookie = `token=${data.token}; path=/;`;
-                            window.location.href = '/home';
+                            const cookieValue = `Bearer ${data.token}`;
+                            document.cookie = `token=${cookieValue}; path=/;`;
+
+                            fetch('/home', {
+                                method: 'GET',
+                                headers: {
+                                    'Authorization': 'Bearer ' + data.token, // Include token-ul JWT în header-ul de autorizare
+                                }
+                            })
+                            .then(response => {
+                                if (response.ok) {
+                                    // Dacă răspunsul este OK, încărcați conținutul paginii în elementul body al paginii curente
+                                    return response.text(); // Întoarceți conținutul paginii ca text
+                                } else {
+                                    // Dacă răspunsul nu este OK, aruncați o excepție
+                                    throw new Error('Network response was not ok');
+                                }
+                            })
+                            .then(data => {
+                                // Utilizați conținutul paginii pentru a seta conținutul elementului body al paginii curente
+                                document.body.innerHTML = data;
+                                
+                                // Actualizați URL-ul în bara de adrese a browser-ului
+                                window.history.pushState({}, '', '/home');
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
                         } else {
                             throw new Error('Invalid login response');
                         }
@@ -179,3 +206,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+

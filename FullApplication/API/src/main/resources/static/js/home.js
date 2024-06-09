@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const images = {
-        'P': './img/ParkingAssets/parkingLot.png',
-        'D': './img/ParkingAssets/road.png',
-        'Z': './img/ParkingAssets/wall.png'
+        'P': '../static/img/ParkingAssets/parkingLot.png',
+        'D': '../static/img/ParkingAssets/road.png',
+        'Z': '../static/img/ParkingAssets/wall.png'
     };
 
     for (let i = 0; i < matrix.length; i++) {
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         smallModal1.style.left = `${rect.left + window.scrollX}px`;
         smallModal1.style.top = `${rect.bottom + window.scrollY}px`;
 
-        const cellId = event.target.id || event.target.parentElement.id; // Verifică id-ul imaginii sau a div-ului părinte
+        const cellId = event.target.id || event.target.parentElement.id; 
         console.log(cellId + " id")
 
         const [x, y] = cellId.split('-');
@@ -217,10 +217,10 @@ document.addEventListener("DOMContentLoaded", function () {
         let prevY = null;
     
         const carImages = {
-            up: './img/ParkingAssets/carOnRoad/carUp.jfif',
-            down: './img/ParkingAssets/carOnRoad/carDown.jfif',
-            left: './img/ParkingAssets/carOnRoad/carLeft.jfif',
-            right: './img/ParkingAssets/carOnRoad/carRight.jfif'
+            up: '../static/img/ParkingAssets/carOnRoad/carUp.jfif',
+            down: '../static/img/ParkingAssets/carOnRoad/carDown.jfif',
+            left: '../static/img/ParkingAssets/carOnRoad/carLeft.jfif',
+            right: '../static/img/ParkingAssets/carOnRoad/carRight.jfif'
         };
     
         const directionsCar = [
@@ -232,14 +232,14 @@ document.addEventListener("DOMContentLoaded", function () {
     
         let ShortestPathMatrix = [
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+            [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
             [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -265,9 +265,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (prevX !== null && prevY !== null) {
                     const prevCellIndex = prevX * M + prevY;
                     const prevCell = parkingGrid.children[prevCellIndex];
-                    prevCell.innerHTML = ''; // Șterge conținutul celulei anterioare
+                    prevCell.innerHTML = '';
                     const prevImg = document.createElement('img');
-                    prevImg.src = './img/ParkingAssets/road.png'; // Înlocuiește cu calea către imaginea corespunzătoare
+                    prevImg.src = '../static/img/ParkingAssets/road.png';
                     prevImg.style.width = '100%';
                     prevImg.style.height = '100%';
                     prevCell.appendChild(prevImg);
@@ -290,12 +290,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     const finalCellIndex = mybody.xFinish * M + mybody.yFinish;
                     const finalCell = parkingGrid.children[finalCellIndex];
                     const finalImg = document.createElement('img');
-                    finalImg.src = './img/ParkingAssets/imagine1.jfif'; 
+                    finalImg.src = '../static/img/ParkingAssets/imagine1.jfif';
                     finalImg.style.width = '100%';
                     finalImg.style.height = '100%';
                     finalCell.innerHTML = '';
                     finalCell.appendChild(finalImg);
-                    carImg.src = './img/ParkingAssets/road.png'; 
+                    carImg.src = '../static/img/ParkingAssets/road.png';
                     return;
                 }
     
@@ -305,11 +305,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (nextX >= 0 && nextX < ShortestPathMatrix.length &&
                         nextY >= 0 && nextY < ShortestPathMatrix[nextX].length &&
                         ShortestPathMatrix[nextX][nextY] === 1) {
-                        prevX = currentX; // Actualizează poziția anterioară
+                        prevX = currentX;
                         prevY = currentY;
                         currentX = nextX;
                         currentY = nextY;
-                        carImg.src = dir.img; // Setează imaginea mașinii pe baza direcției
+                        carImg.src = dir.img;
                         break;
                     }
                 }

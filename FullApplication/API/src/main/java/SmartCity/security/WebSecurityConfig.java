@@ -65,11 +65,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/v1/**").permitAll()
                 .antMatchers("/v2/api-docs/**").permitAll()
-                .antMatchers("/","/home" , "/index.html", "/static/**", "/css/**", "/js/**", "/img/**", "/img/ParkingAssets/**").permitAll() // Permit all access to index.html and static resources
-                .antMatchers(AUTH_WHITELIST).permitAll()
-                .anyRequest().authenticated();
+                .antMatchers("/","/index.html", "/static/**","/resources/**", "/css/index.css", "/js/**", "/img/**", "/img/ParkingAssets/**").permitAll() // Permit all access to index.html and static resources
+                .antMatchers(AUTH_WHITELIST).permitAll() // Whitelist other endpoints
+                .anyRequest().authenticated(); // Require authentication for other endpoints
 
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
-
 }

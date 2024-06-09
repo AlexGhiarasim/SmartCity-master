@@ -5,20 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a0ad381-2aad-40fd-88f5-63b9930bb370" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/SmartCity-master.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/bottom - Copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/car.png" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/car.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/lot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/security/impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/security/impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/security/jwt/AuthTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/security/jwt/AuthTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/security/jwt/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/security/jwt/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/LoginSignUpReqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/LoginSignUpReqs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/getCurrentUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/getCurrentUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/PageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/security/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/security/impl/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/security/impl/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/security/jwt/AuthTokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/security/jwt/AuthTokenFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/security/jwt/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/security/jwt/JwtUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/img/ParkingAssets/bottom - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/img/ParkingAssets/car.png" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/img/ParkingAssets/car.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/img/ParkingAssets/lot1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/LoginSignUpReqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/LoginSignUpReqs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/getCurrentUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/getCurrentUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,29 +64,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.AppStarter.executor": "Run",
-    "git-widget-placeholder": "myfront",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ghiar/Desktop/HospitalStocks-main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AppStarter.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;myfront&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ghiar/Desktop/SmartCity-master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ghiar\Desktop\SmartCity-master\FullApplication\API\src\main\resources\templates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="AppStarter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="smartcity" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="SmartCity.AppStarter" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,10 +121,25 @@
       <workItem from="1717835595644" duration="48000" />
       <workItem from="1717835654680" duration="119000" />
       <workItem from="1717861918958" duration="21000" />
+      <workItem from="1717888530618" duration="2397000" />
+      <workItem from="1717924142854" duration="43000" />
+      <workItem from="1717950064365" duration="12520000" />
+      <workItem from="1717965539249" duration="449000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

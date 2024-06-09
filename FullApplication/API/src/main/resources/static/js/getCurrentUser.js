@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const usernameHeader = document.querySelector('.h2');
+    // const usernameHeader = document.querySelector('.h2');
 
-    usernameHeader.textContent = `${"Trebuie"} ${"acum"}`;
+    // usernameHeader.textContent = `${"Trebuie"} ${"acum"}`;
     // fetch('/api/v1/user/info')
     //     .then(response => {
     //         if (!response.ok) {
