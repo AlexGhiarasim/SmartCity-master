@@ -10,4 +10,6 @@ import java.util.Optional;
 @Repository
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpot, Long> {
     Optional<Object> findByParkingLotId(Long id);
-}
+
+    Optional<ParkingSpot> findByParkingLotIdAndXAndY(Long parkingLotId, int x, int y);}
+

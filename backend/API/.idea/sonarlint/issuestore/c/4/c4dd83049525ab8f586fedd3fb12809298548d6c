@@ -1,10 +1,10 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•“Ž›8—¥ë”ÿ1J$1b86750e-166b-46b6-8a51-25a65f99ab9b
-d
-java:S1128"GRemove this unused import 'org.springframework.boot.CommandLineRunner'.(È—ÿÅ8Óü¯•ÿ1
-e
-java:S1128	"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Þ8Óü¯•ÿ1
-B
-java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8Óü¯•ÿ1
-F
-java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8Óü¯•ÿ1
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•“Ž›8—¥ë”ÿ1J$3dd48057-b308-4de6-9c0b-5922496bc541
+Š
+java:S1128"GRemove this unused import 'org.springframework.boot.CommandLineRunner'.(È—ÿÅ8Óü¯•ÿ1J$c3c5ae9b-583a-41f5-8415-623a487f2307
+‹
+java:S1128	"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Þ8Óü¯•ÿ1J$99a2d4b1-ed3a-4ec6-abb8-ae3c9a47730f
+h
+java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8Óü¯•ÿ1J$752b702e-0a71-4942-88ee-ddff5b56e86e
+l
+java:S1128")Remove this unused import 'java.net.URI'.(Ö¦¨°8Óü¯•ÿ1J$1df37e2e-28e5-4dd3-97c2-25e7eecf163f

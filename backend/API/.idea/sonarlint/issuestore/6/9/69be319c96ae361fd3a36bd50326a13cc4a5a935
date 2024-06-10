@@ -1,10 +1,18 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ã–ƒşÿÿÿÿJ$db7a7ef6-8f6e-4475-96f7-d8cf91901ca4
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ã–ƒşÿÿÿÿJ$25104d3e-a941-41d6-b5da-23d90de6e4bc
 ~
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$bbc35ff0-5f02-4c51-b901-55a231c37d5e
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$a054b6af-1036-430e-8fb0-08f85c9e7a24
 ~
-java:S6813 "BRemove this field injection and use constructor injection instead.(êæÄŞJ$f1d15bbf-271c-4dd2-a563-d40b55519b02
+java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞJ$48d91ff8-7c62-4db1-a21f-1d68e6a88aee
 ~
-java:S6813#"BRemove this field injection and use constructor injection instead.(êæÄŞJ$e79159b1-8e18-438e-9e13-7427c83a7fb7
+java:S6813$"BRemove this field injection and use constructor injection instead.(êæÄŞJ$748642bb-1e67-445f-a95b-164057947f78
 ~
-java:S6813&"BRemove this field injection and use constructor injection instead.(êæÄŞJ$ca527842-adcc-4403-9ebd-054ca462eea3
+java:S6813'"BRemove this field injection and use constructor injection instead.(êæÄŞJ$5e73411d-ae2f-45e8-9aaa-f336d043958d
+
+java:S6809U"UCall transactional methods via an injected dependency instead of directly via 'this'.(Ãø¼¬úÿÿÿÿ8±ï€2J$098dc210-c57d-4391-98b5-d7c76a9156fc
+
+java:S6809Y"UCall transactional methods via an injected dependency instead of directly via 'this'.(İ³ñÑûÿÿÿÿ8²ï€2J$f57c1546-de5c-4bb5-a061-4be394a229ce
+
+java:S6809j"UCall transactional methods via an injected dependency instead of directly via 'this'.(´³æÛûÿÿÿÿ8ùœñ€2J$a3e5d379-b4ff-4618-8150-6c64b0b4a4fd
+˜
+java:S6809k"UCall transactional methods via an injected dependency instead of directly via 'this'.(ú€ƒ€8š£ï€2J$6aafb687-90dc-46d4-ba1a-0a88ac707a1d

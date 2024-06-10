@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -19,7 +21,7 @@ public class ParkingSpot {
     private Long id;
 
     @Column(nullable = false)
-    private boolean occupied;
+    private boolean reserved;
 
     @ManyToOne
     @JoinColumn(name = "parking_lot_id", nullable = false)
@@ -30,5 +32,10 @@ public class ParkingSpot {
 
     @Column(nullable = false)
     private int y; // Coordonata Y a locului de parcare
+
+    private LocalDateTime reservationTime; // New field for reservation time
+    public boolean isReserved() {
+        return reserved;
+    }
 
 }

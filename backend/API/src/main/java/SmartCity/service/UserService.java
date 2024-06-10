@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.List;
@@ -49,6 +50,7 @@ public class UserService {
         return ERole.getGreatestERole(userRoles);
     }
 
+    @Transactional(readOnly = true)
     public User findById(Long userId) {
         return userRepository.findById(userId).orElse(null);
     }
@@ -69,7 +71,7 @@ public class UserService {
         return roleRepository.findByName(role)
                 .orElseThrow(() -> new RuntimeException("Role not found"));
     }
-
+    @Transactional(readOnly = true)
     public User find(String username) {
         return userRepository.findByUsername(username).orElse(null);
     }
@@ -77,16 +79,16 @@ public class UserService {
     public boolean exist(String username) {
         return userRepository.existsByUsername(username);
     }
-
+    @Transactional
     public User create(String username, String password, ERole role) {
         Set<String> rolesAsString = new HashSet<>(List.of(role == null ? ERole.ROLE_USER.getAlias() : role.getAlias()));
         return create(username, password, rolesAsString);
     }
-
+    @Transactional
     public User create(String username, String password, Set<String> rolesAsStrings) {
         return create(username, password, rolesAsStrings, null, null);
     }
-
+    @Transactional
     public User create(String username, String password, Set<String> rolesAsStrings, String firstName, String lastName) {
         Set<Role> roles = getRolesByRolesSetAsString(rolesAsStrings);
         String encodedPassword = encoder.encode(password);
@@ -99,12 +101,12 @@ public class UserService {
         user.setRoles(roles);
         return userRepository.save(user);
     }
-
+    @Transactional
     public User findOrCreate(String username, String password, ERole role) {
         User user = find(username);
         return user == null ? create(username, password, role) : user;
     }
-
+    @Transactional
     public User save(User user) {
         return userRepository.save(user);
     }

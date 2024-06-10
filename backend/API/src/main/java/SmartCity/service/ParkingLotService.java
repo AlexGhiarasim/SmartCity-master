@@ -44,7 +44,7 @@ public class ParkingLotService {
         ParkingLot parkingLot = parkingLotRepository.findById(id).orElse(null);
         if (parkingLot != null) {
             List<ParkingSpotDTO> parkingSpotDTOs = parkingLot.getParkingSpots().stream()
-                    .map(spot -> new ParkingSpotDTO(spot.getId(), spot.isOccupied(), spot.getX(), spot.getY()))
+                    .map(spot -> new ParkingSpotDTO(spot.getId(), spot.isReserved(), spot.getX(), spot.getY(),spot.getReservationTime()))
                     .collect(Collectors.toList());
 
             List<WallDTO> wallDTOs = parkingLot.getWalls().stream()

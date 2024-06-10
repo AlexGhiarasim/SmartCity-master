@@ -41,7 +41,7 @@ public class ParkingSpotController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<ParkingSpotDTO> updateParkingSpot(@PathVariable Long id, @RequestBody ParkingSpotDTO parkingSpotDTO) {
         ParkingSpotDTO updatedParkingSpot = parkingSpotService.updateParkingSpot(id, parkingSpotDTO);
         if (updatedParkingSpot != null) {

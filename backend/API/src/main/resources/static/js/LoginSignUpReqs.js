@@ -28,15 +28,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         headers: {
                             "Content-Type": "application/json"
                         }, body: JSON.stringify(credentials)
-                    }).then(response => {
-                        if (response.ok) {
-                            // cerere GET autentificata la pagina de home
-                            window.location.href = "/home.html";
-                        } else {
-                            // aici voi face o caseta pt raspuns incorect
-                            throw new Error("Username or password incorrect");
-                        }
-                    })
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.token) {
+                                // Store the JWT token
+                                localStorage.setItem('token', data.token);
+                                // Redirect to home page
+                                window.location.href = "/home.html";
+                            } else {
+                                throw new Error("Username or password incorrect");
+                            }
+                        })
                         .catch(error => {
                             alert(error.message);
                         });
@@ -87,14 +89,24 @@ document.addEventListener('DOMContentLoaded', function () {
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify(newUser)
-                    }).then(response => {
-                        if (response.ok) {
-                            // cerere GET autentificata la pagina de home
-                            window.location.href = "/home.html";
-                        } else {
-                            throw new Error("Signup failed");
-                        }
-                    }).catch(error => {
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.token) {
+                                // Store the JWT token
+                                localStorage.setItem('token', data.token);
+                                // Redirect to home page
+                                fetch('/home', {
+                                    headers: {
+                                        'Authorization': `Bearer ${data.token}`
+                                    }
+                                }).then(response => {
+                                    if (response.status === 401) {
+                                        window.location.href = '/index.html';
+                                    }})
+                            } else {
+                                throw new Error("Username or password incorrect");
+                            }
+                        }).catch(error => {
                         alert(error.message);
                     });
                 } else {

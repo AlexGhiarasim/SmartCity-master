@@ -87,3 +87,5 @@ _
 /src/main/java/SmartCity/service/JwtService.java,3\d\3d4424ba170329237a463dbedef03b5c3a0003cb
 f
 6src/main/java/SmartCity/controller/PageController.java,8\5\8578e386c89809780247b1182ed62ebd69f2cd81
+j
+:src/main/java/SmartCity/service/ReservationExpiryTask.java,b\3\b34f48a3f9eb442d5835ec11b69100898dc441f3

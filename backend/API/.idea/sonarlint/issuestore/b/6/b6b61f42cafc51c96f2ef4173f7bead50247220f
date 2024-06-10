@@ -1,4 +1,6 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿØöŸJ$44578838-226f-42d3-bbc1-422c45f542b0
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿØöŸ8÷Ð÷Îÿ1J$3df03a36-2c78-4f8f-9bd9-fc633d83d081
 K
-java:S1128".Remove this unused import 'javax.persistence'.(¬£þç8ž«Þ‘ÿ1
+java:S1128".Remove this unused import 'javax.persistence'.(¬£þç8ù‹¢•€2
+\
+java:S1128"@Remove this unused import 'SmartCity.model.business.ParkingLot'.(‹»é8ú‹¢•€2
