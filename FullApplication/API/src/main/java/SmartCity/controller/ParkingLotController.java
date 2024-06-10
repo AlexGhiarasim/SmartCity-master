@@ -2,7 +2,9 @@ package SmartCity.controller;
 
 import SmartCity.dto.ParkingLotDTO;
 import SmartCity.dto.ParkingLotDetailsDTO;
+import SmartCity.dto.ParkingSpotDTO;
 import SmartCity.service.ParkingLotService;
+import SmartCity.service.ParkingSpotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,6 +18,8 @@ public class ParkingLotController {
 
     @Autowired
     private ParkingLotService parkingLotService;
+    @Autowired
+    private ParkingSpotService parkingSpotService;
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
@@ -56,5 +60,18 @@ public class ParkingLotController {
     public ResponseEntity<Void> deleteParkingLot(@PathVariable Long id) {
         parkingLotService.deleteParkingLot(id);
         return ResponseEntity.noContent().build();
+    }
+
+
+    @PatchMapping("/reserve")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<ParkingSpotDTO> reserveParkingSpot(@RequestParam Long parkingLotId,
+                                                             @RequestParam int x,
+                                                             @RequestParam int y) {
+        ParkingSpotDTO parkingSpotDTO = parkingSpotService.reserveParkingSpot(parkingLotId, x, y);
+        if (parkingSpotDTO != null) {
+            return ResponseEntity.ok(parkingSpotDTO);
+        }
+        return ResponseEntity.notFound().build();
     }
 }
