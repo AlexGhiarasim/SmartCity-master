@@ -111,31 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             const cookieValue = `Bearer ${data.token}`;
                             document.cookie = `token=${cookieValue}; path=/;`;
 
-                            fetch('/home', {
-                                method: 'GET',
-                                headers: {
-                                    'Authorization': 'Bearer ' + data.token, // Include token-ul JWT în header-ul de autorizare
-                                }
-                            })
-                            .then(response => {
-                                if (response.ok) {
-                                    // Dacă răspunsul este OK, încărcați conținutul paginii în elementul body al paginii curente
-                                    return response.text(); // Întoarceți conținutul paginii ca text
-                                } else {
-                                    // Dacă răspunsul nu este OK, aruncați o excepție
-                                    throw new Error('Network response was not ok');
-                                }
-                            })
-                            .then(data => {
-                                // Utilizați conținutul paginii pentru a seta conținutul elementului body al paginii curente
-                                document.body.innerHTML = data;
-                                
-                                // Actualizați URL-ul în bara de adrese a browser-ului
-                                window.history.pushState({}, '', '/home');
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                            });
+                            window.location.href = "/home";
                         } else {
                             throw new Error('Invalid login response');
                         }
