@@ -244,6 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         xFinish = parseInt(x);
                         yFinish = parseInt(y);
+
                     }
 
                     span1.onclick = function () {
@@ -267,13 +268,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             x: xFinish,             
                             y: yFinish   
                         };
-                        fetch('http://localhost:8666/api/v1/parkinglot/reserve', {
+                        console.log(`Cerere PATCH către URL-ul: http://localhost:8666/api/v1/parkinglot/reserve?parkingLotId=${data1.parkingLotId}&x=${data.x}&y=${data.y}`);
+                        fetch(`http://localhost:8666/api/v1/parkinglot/reserve?parkingLotId=${data1.parkingLotId}&x=${data1.x}&y=${data1.y}`, {
                             method: 'PATCH',
                             headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': token
-                            },
-                            body: JSON.stringify(data1)
+                                'Authorization': token,
+                                'Content-Type': 'application/json'
+                            }
                         })
                         .then(response => {
                             if (response.ok) {

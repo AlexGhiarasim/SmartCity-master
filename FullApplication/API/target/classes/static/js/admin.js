@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 deleteBtn.textContent = 'Șterge';
                 
                 var span = document.createElement('span');
-                var parkingIdName = "Parcare    -" + parking.id + ": " + parking.name;
+                var parkingIdName = "Parcare -" + parking.id + ": " + parking.name;
                 span.textContent = parkingIdName;
                 
                 parkingItem.appendChild(span);
@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 parkingList.appendChild(parkingItem);
             });
-            
 
             associateEventsWithButtons();
         })
@@ -90,12 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
     
                 userList.appendChild(userItem);
             });
-    
+
             associateEventsWithButtons(); 
         })
         .catch(error => console.error('Error:', error));
     }
-    
 
     function associateEventsWithButtons() {
         var modifyParkingBtns = document.querySelectorAll('.modify-parking-btn');
@@ -129,18 +127,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('Se va șterge parcare:', parkingName);
                 parkingDeleteModal.style.display = 'block'; 
         
-                var parkingId = parkingName.split('-')[1].trim(); 
+                // Use regex to extract the numeric part from the parkingName
+                var parkingIdMatch = parkingName.match(/\d+/);
+                var parkingId = parkingIdMatch ? parkingIdMatch[0] : null;
                 confirmDeleteParkingBtn.dataset.parkingId = parkingId;
-                confirmDeleteParkingBtn.dataset.parkingItem = parkingItem;
+                confirmDeleteParkingBtn.dataset.parkingItemIndex = Array.from(parkingItem.parentNode.children).indexOf(parkingItem);
             });
         });
-        
-        confirmDeleteParkingBtn.addEventListener('click', function () {
-            var parkingId = this.dataset.parkingId; 
-            var parkingItem = this.dataset.parkingItem; 
 
+        confirmDeleteParkingBtn.addEventListener('click', deleteParkingHandler);
+
+        function deleteParkingHandler() {
+            var parkingId = this.dataset.parkingId; 
+            var parkingItemIndex = this.dataset.parkingItemIndex;
+            console.log("se va sterge:" + parkingId);
+        
             if (parkingId) {
-                fetch(`http://localhost:8666/api/v1/parkinglot/{${parkingId}}`, {
+                fetch(`http://localhost:8666/api/v1/parkinglot/${parkingId}`, {
                     method: 'DELETE',
                     headers: {
                         'Authorization': token,
@@ -149,9 +152,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(response => {
                     if (response.ok) {
-                        console.log(`Parcarea cu id-ul ${parkingId} a fost ștearsă cu succes.`);
+                        console.log(`Parcarea cu id-ul ${parkingId} a fost stearsa cu succes.`);
+                        var parkingList = document.querySelector('.parking-list');
+                        var parkingItem = parkingList.children[parkingItemIndex];
                         if (parkingItem) {
-                            parkingItem.remove(); // Șterge elementul din listă
+                            parkingItem.remove();
                         }
                     } else {
                         console.error(`Eroare la ștergerea parcării cu id-ul ${parkingId}.`);
@@ -160,27 +165,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .catch(error => console.error('Error:', error));
             }
-        });
-        
-        
-        
+        }
 
         parkingDeleteCloseBtn.addEventListener('click', function () {
             parkingDeleteModal.style.display = 'none';
         });
 
-        confirmDeleteParkingBtn.addEventListener('click', function () {
-            fetchDataAndPopulateParkingList();
-            parkingDeleteModal.style.display = 'none'; // Închidem modalul de confirmare
-        });
-        
-        
-
+        var deleteUserBtns = document.querySelectorAll('.delete-user-btn');
         var userModal = document.getElementById('user-modal');
         var userCloseBtn = document.querySelector('#user-modal .close');
-        var deleteUserBtns = document.querySelectorAll('.delete-user-btn');
+        var confirmDeleteUserBtn = document.getElementById('confirm-delete-user-btn');
 
-       
         deleteUserBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
                 userModal.style.display = 'block';
@@ -197,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        var confirmDeleteUserBtn = document.getElementById('confirm-delete-user-btn');
         confirmDeleteUserBtn.addEventListener('click', function () {
             var userItem = document.querySelector('.user-item');
             if (userItem) {
@@ -210,7 +204,6 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchDataAndPopulateParkingList();
     fetchDataAndPopulateUserList();
 });
-
 
 function getCookie(name) {  
     const value = `; ${document.cookie}`;
