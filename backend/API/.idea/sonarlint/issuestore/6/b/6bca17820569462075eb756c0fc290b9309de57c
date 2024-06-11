@@ -1,0 +1,7 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Óáðµ8øè¬Â€2J$454d5d4a-eecb-4c53-aa14-dcd4a77007d6
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8€é¬Â€2J$e97d08d8-9655-4d39-8ea0-f0cac7538add
+]	java:S125"<This block of commented-out lines of code should be removed.(•Âø¾þÿÿÿÿ8÷¹¼Â€2
+Š
+java:S1128"GRemove this unused import 'nonapi.io.github.classgraph.json.JSONUtils'.(×¸‰8…é¬Â€2J$853d86bd-abde-4d1a-a9e6-3199d6dc3881

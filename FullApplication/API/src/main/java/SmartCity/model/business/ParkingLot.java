@@ -34,4 +34,6 @@ public class ParkingLot {
     @OneToMany(mappedBy = "parkingLot", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Wall> walls;
 
+    public ParkingLot(String parcarePalasA2, int x, int y) {
+    }
 }

@@ -1,0 +1,11 @@
+
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ã–ƒşÿÿÿÿ8·°§Â€2J$40d7c4e2-4074-404b-94f4-cdd7d3998a40
+š
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ï¬åŞùÿÿÿÿ8˜±§Â€2J$96deb7dc-8ac0-4027-b41f-3ab2524b1452
+~	java:S125"<This block of commented-out lines of code should be removed.(õÇúÿ8õø¼Â€2J$516f7694-ad52-4e98-b204-e91ab01a0e07
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(±‘‹ûÿÿÿÿ8õø¼Â€2J$9610ae9e-2944-4396-9e5e-d5f6fd598caf
+X	java:S125:"<This block of commented-out lines of code should be removed.(ı“ÊÍ8œ–½Â€2
+
+java:S1128"9Remove this unused import 'SmartCity.dto.PathRequestDTO'.(ª‡Ø«üÿÿÿÿ8±§Â€2J$e177ba6f-9cfc-4f82-a909-db1b0d8c2c3b
+}
+java:S1128":Remove this unused import 'SmartCity.dto.PathResponseDTO'.(Íã‹ç8±§Â€2J$1fb55b65-8c24-4527-986f-33e841c27ffa
