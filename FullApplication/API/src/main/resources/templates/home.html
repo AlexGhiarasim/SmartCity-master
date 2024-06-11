@@ -55,11 +55,16 @@
         <button id="select-loc-btn">Selectează loc</button>
     </div>
 </div>
+<div id="occupied-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="occupied-text">Locul de parcare este ocupat!</p>
+    </div>
+</div>
 
 <script th:src="@{/static/js/getCurrentUser.js}"></script>
 <script th:src="@{/static/js/getDates.js}"></script>
 <script th:src="@{/static/js/getAllParkingLots.js}"></script>
-<script th:src="@{/static/js/home.js}"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 

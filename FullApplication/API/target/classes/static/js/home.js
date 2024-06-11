@@ -1,33 +1,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
-            const cell = document.createElement('div');
-            const img = document.createElement('img');
-            if (matrix[i][j] === 'P') {
-                cell.style.cursor = 'pointer';
-                cell.addEventListener('mouseenter', function () {
-                    img.classList.add('highlight');
-                });
-                cell.addEventListener('mouseleave', function () {
-                    img.classList.remove('highlight');
-                });
-                cell.addEventListener('click', function (event) {
-                    showSmallModal(event);
-                });
-            }
-            img.src = images[matrix[i][j]];
-            cell.appendChild(img);
-
-            cell.setAttribute('id', `${i}-${j}`);
-
-            parkingGrid.appendChild(cell);
-        }
-    }
-
-
+    
     const modal = document.getElementById("parking-modal");
     const btn = document.getElementById("select-parking-btn");
     const span = document.getElementsByClassName("close")[0];
@@ -227,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
     
-            const carMovementInterval = setInterval(moveCar, 500);
         }
     };
     

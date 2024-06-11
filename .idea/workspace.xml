@@ -6,17 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3a0ad381-2aad-40fd-88f5-63b9930bb370" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/ParkingLotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/ParkingLotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/ParkingLotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/ParkingLotService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/img/ParkingAssets/imagine1.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/getAllParkingLots.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/getAllParkingLots.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/ParkingLotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/ParkingLotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/service/ParkingLotService.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/service/ParkingLotService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/getAllParkingLots.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/getAllParkingLots.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,7 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.AppStarter.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;myfront&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ghiar/Desktop/SmartCity-master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -107,6 +104,9 @@
       <workItem from="1717965539249" duration="449000" />
       <workItem from="1718017146738" duration="14073000" />
       <workItem from="1718040043213" duration="19239000" />
+      <workItem from="1718066017840" duration="141000" />
+      <workItem from="1718088279424" duration="4931000" />
+      <workItem from="1718112180981" duration="11341000" />
     </task>
     <servers />
   </component>

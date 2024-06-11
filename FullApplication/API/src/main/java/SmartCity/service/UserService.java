@@ -1,5 +1,6 @@
 package SmartCity.service;
 
+import SmartCity.dto.UserDetailsDTO;
 import SmartCity.model.auth.ERole;
 import SmartCity.model.auth.Role;
 import SmartCity.model.auth.User;
@@ -128,6 +129,15 @@ public class UserService {
         ERole enumByAlias = ERole.getEnumByAlias(role);
         Optional<Role> byName = roleRepository.findByName(enumByAlias);
         return byName.orElseGet(() -> roleRepository.save(new Role(enumByAlias)));
+    }
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
+    public List<UserDetailsDTO> getAllUsers() {
+        return userRepository.findAll().stream()
+                .map(user -> new UserDetailsDTO(user.getId(), user.getUsername(), user.getRoles()))
+                .collect(Collectors.toList());
     }
 
 }
