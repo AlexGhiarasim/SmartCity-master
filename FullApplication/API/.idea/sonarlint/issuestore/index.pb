@@ -89,3 +89,9 @@ f
 6src/main/java/SmartCity/controller/PageController.java,8\5\8578e386c89809780247b1182ed62ebd69f2cd81
 j
 :src/main/java/SmartCity/service/ReservationExpiryTask.java,b\3\b34f48a3f9eb442d5835ec11b69100898dc441f3
+f
+6src/main/java/SmartCity/config/swagger/DataLoader.java,f\e\fefd56a4c69edfbe4938a0621272b9ba31d79692
+[
++src/main/java/SmartCity/config/swagger.java,e\9\e9d589d43158e10bef351a36dbf49029debd969c
+^
+.src/main/java/SmartCity/config/DataLoader.java,f\b\fbee9717ee6092ed3847e863e5207112789a73f0

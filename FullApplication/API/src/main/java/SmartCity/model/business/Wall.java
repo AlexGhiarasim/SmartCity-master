@@ -34,4 +34,11 @@ public class Wall {
     @Column(nullable = false)
     private int endY; // Coordonata Y de final a zidului
 
+    public Wall(int startX, int startY, int endX, int endY, ParkingLot lot1) {
+        this.startX = startX;
+        this.startY = startY;
+        this.endX = endX;
+        this.endY = endY;
+        this.parkingLot = lot1;
+    }
 }
