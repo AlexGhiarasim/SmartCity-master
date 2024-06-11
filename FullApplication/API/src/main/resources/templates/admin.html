@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gestionare Parcări și Utilizatori</title>
+    <link rel="stylesheet" th:href="@{./static/css/admin.css}">
+</head>
+<body>
+<header class="header">
+    <div class="header-content">
+        <h1>🚘SmartCity - Iași🚘</h1>
+        <a href="index.html" id="logout-link">Logout</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="admin-section">
+        <h1 class="h1">Gestionare Parcări</h1>
+        <button id="create-parking-btn">Creează Parcare Nouă</button> 
+        <div class="parking-list">
+            <div class="parking-item">
+                <span>Parcarea 1</span>
+                <button class="modify-parking-btn">Modifică</button>
+                <button class="delete-parking-btn">Șterge</button>
+            </div>
+            <div class="parking-item">
+                <span>Parcarea 2</span>
+                <button class="modify-parking-btn">Modifică</button>
+                <button class="delete-parking-btn">Șterge</button>
+            </div>
+            <div class="parking-item">
+                <span>Parcarea 3</span>
+                <button class="modify-parking-btn">Modifică</button>
+                <button class="delete-parking-btn">Șterge</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-section">
+        <h1 class="h1">Gestionare Utilizatori</h1>
+        <div class="user-list">
+            <div class="user-item">
+                <span>User 1</span>
+                <button class="delete-user-btn">Șterge</button>
+            </div>
+            <div class="user-item">
+                <span>User 2</span>
+                <button class="delete-user-btn">Șterge</button>
+            </div>
+            <div class="user-item">
+                <span>User 3</span>
+                <button class="delete-user-btn">Șterge</button>
+            </div>
+            <div class="user-item">
+                <span>User 4</span>
+                <button class="delete-user-btn">Șterge</button>
+            </div>
+            <div class="user-item">
+                <span>User 5</span>
+                <button class="delete-user-btn">Șterge</button>
+            </div>
+            <!-- Add more user items as needed -->
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 SmartCity-Iași. Toate drepturile rezervate.</p>
+</footer>
+
+<div id="parking-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Modifică Parcarea</h2>
+        <input type="text" id="parking-intervals" placeholder="Ex: [3,3]-[3,7] R/D sau [4,2] - P">
+        <button id="save-parking-btn">Salvează</button>
+    </div>
+</div>
+
+<div id="user-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Șterge Utilizator</h2>
+        <p>Ești sigur că vrei să ștergi acest utilizator?</p>
+        <button id="confirm-delete-user-btn">Șterge</button>
+    </div>
+</div>
+
+<div id="parking-delete-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Ștergere Parcare</h2>
+        <p>Ești sigur că vrei să ștergi această parcare?</p>
+        <button id="confirm-delete-parking-btn">Șterge</button>
+    </div>
+</div>
+<div id="create-parking-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Creează Parcare Nouă</h2>
+        <div>
+            <label for="parking-size">Dimensiunile parcării (lungime x lățime):</label>
+            <input type="text" id="parking-size" name="parking-size" placeholder="Ex: 10 x 5">
+        </div>
+        <div>
+            <label for="wall-intervals">Intervale pentru ziduri:</label>
+            <input type="text" id="wall-intervals" name="wall-intervals" placeholder="Ex: 1:2-1:5,2:3-2:6">
+        </div>
+        <div>
+            <label for="road-intervals">Intervale pentru drumuri:</label>
+            <input type="text" id="road-intervals" name="road-intervals" placeholder="Ex: 3:2-5:2,4:3-6:3">
+        </div>
+        <button id="save-create-parking-btn">Salvează</button> <!-- Buton pentru salvarea detaliilor despre parcarea nouă -->
+    </div>
+</div>
+
+<script th:src="@{/js/admin.js}"></script>
+<script th:src="@{/static/js/createNewParkingLot.js}"></script>
+</body>
+</html>
