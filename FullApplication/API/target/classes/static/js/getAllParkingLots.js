@@ -45,19 +45,30 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 console.log("Datele primite de la server:", data);
-
+            
                 var parkingOptionsContainer = document.getElementById("parking-options");
-                parkingOptionsContainer.innerHTML = ""; // Clear existing options
-
+                parkingOptionsContainer.innerHTML = ""; 
+            
                 data.forEach(function (parkingLot, index) {
                     var button = document.createElement("button");
                     button.className = "parking-option";
-                    button.textContent = parkingLot;
-                    button.dataset.index = index + 1; // Set the button index
+                    
+                    var prefixedId = "parking-" + parkingLot.id;
+            
+                    button.textContent = parkingLot.name;
+                    button.dataset.index = index + 1;
+            
+                    button.id = prefixedId;
+                    button.addEventListener('click', function() {
+                        console.log("S-a făcut click pe parcul cu id:", prefixedId);
+                    });
+            
                     parkingOptionsContainer.appendChild(button);
                 });
+            
                 document.getElementById("parking-modal").style.display = "block";
             })
+            
             .catch(error => {
                 console.error("Error fetching data:", error);
             });

@@ -1,4 +1,3 @@
-
 package SmartCity.controller;
 
 import SmartCity.dto.ParkingSpotDTO;

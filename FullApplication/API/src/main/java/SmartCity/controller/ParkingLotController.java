@@ -30,8 +30,8 @@ public class ParkingLotController {
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<String>> getAllParkingLotNames() {
-        List<String> parkingLotDTOList = parkingLotService.getAllParkingLotNames();
+    public ResponseEntity<List<ParkingLotDTO>> getAllParkingLots() {
+        List<ParkingLotDTO> parkingLotDTOList = parkingLotService.getAllParkingLots();
         return ResponseEntity.ok(parkingLotDTOList);
     }
 

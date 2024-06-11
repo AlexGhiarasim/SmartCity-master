@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const token = getCookie('token');
 
-    // Funcție pentru a obține datele și a popula lista de parcări
     function fetchDataAndPopulateParkingList() {
         fetch('http://localhost:8666/api/v1/parkinglot/all', {
             method: 'GET',
@@ -16,49 +15,96 @@ document.addEventListener('DOMContentLoaded', function () {
             var parkingList = document.querySelector('.parking-list');
             parkingList.innerHTML = '';
             
-            // Iterăm prin fiecare nume de parcare din datele primite și le adăugăm la lista HTML
-            data.forEach(function(parkingName) {
+            data.forEach(function(parking) {
                 var parkingItem = document.createElement('div');
                 parkingItem.classList.add('parking-item');
                 
-                // Creăm butonul de modificare
                 var modifyBtn = document.createElement('button');
                 modifyBtn.classList.add('modify-parking-btn');
                 modifyBtn.textContent = 'Modifică';
-                
-                // Creăm butonul de ștergere pentru parcări
+            
                 var deleteBtn = document.createElement('button');
                 deleteBtn.classList.add('delete-parking-btn');
                 deleteBtn.textContent = 'Șterge';
                 
-                // Adăugăm numele parcării într-un element span
                 var span = document.createElement('span');
-                span.textContent = parkingName;
+                var parkingIdName = "Parcare    -" + parking.id + ": " + parking.name;
+                span.textContent = parkingIdName;
                 
-                // Adăugăm elementele create în elementul parinte (parkingItem)
                 parkingItem.appendChild(span);
                 parkingItem.appendChild(modifyBtn);
                 parkingItem.appendChild(deleteBtn);
                 
-                // Adăugăm elementul parinte în lista de parcări
                 parkingList.appendChild(parkingItem);
             });
+            
 
-            // După ce am populat lista de parcări, asociem evenimentele pentru butoanele de modificare și ștergere
             associateEventsWithButtons();
         })
         .catch(error => console.error('Error:', error));
     }
 
-    // Funcție pentru a asocia evenimentele cu butoanele de modificare și ștergere
+    function fetchDataAndPopulateUserList() {
+        fetch('http://localhost:8666/api/v1/user/all', {
+            method: 'GET',
+            headers: {
+                'Authorization': token,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            var userList = document.querySelector('.user-list');
+            userList.innerHTML = '';
+            
+            data.forEach(function(user) {
+                var userItem = document.createElement('div');
+                userItem.classList.add('user-item');
+                
+                var idSpan = document.createElement('span');
+                idSpan.textContent = `ID: ${user.id}`;
+                userItem.appendChild(idSpan);
+    
+                var firstNameSpan = document.createElement('span');
+                firstNameSpan.textContent = `First Name: ${user.firstName || 'N/A'}`;
+                userItem.appendChild(firstNameSpan);
+    
+                var lastNameSpan = document.createElement('span');
+                lastNameSpan.textContent = `Last Name: ${user.lastName || 'N/A'}`;
+                userItem.appendChild(lastNameSpan);
+    
+                var usernameSpan = document.createElement('span');
+                usernameSpan.textContent = `Username: ${user.username}`;
+                userItem.appendChild(usernameSpan);
+    
+                var rolesSpan = document.createElement('span');
+                var rolesList = user.roles.map(role => role.name).join(', ');
+                rolesSpan.textContent = `Roles: ${rolesList}`;
+                userItem.appendChild(rolesSpan);
+    
+                var deleteBtn = document.createElement('button');
+                deleteBtn.classList.add('delete-user-btn');
+                deleteBtn.textContent = 'Șterge';
+                userItem.appendChild(deleteBtn);
+    
+                userList.appendChild(userItem);
+            });
+    
+            associateEventsWithButtons(); 
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    
+
     function associateEventsWithButtons() {
         var modifyParkingBtns = document.querySelectorAll('.modify-parking-btn');
         var deleteParkingBtns = document.querySelectorAll('.delete-parking-btn');
         var parkingModal = document.getElementById('parking-modal');
         var parkingCloseBtn = document.querySelector('#parking-modal .close');
-        var parkingDeleteModal = document.getElementById('parking-delete-modal'); // Modalul pentru ștergerea parcării
+        var parkingDeleteModal = document.getElementById('parking-delete-modal'); 
         var parkingDeleteCloseBtn = document.querySelector('#parking-delete-modal .close');
-        var confirmDeleteParkingBtn = document.getElementById('confirm-delete-parking-btn'); // Butonul pentru confirmarea ștergerii parcării
+        var confirmDeleteParkingBtn = document.getElementById('confirm-delete-parking-btn'); 
 
         modifyParkingBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
@@ -79,21 +125,57 @@ document.addEventListener('DOMContentLoaded', function () {
         deleteParkingBtns.forEach(function (btn) {
             btn.addEventListener('click', function (event) {
                 var parkingItem = event.target.closest('.parking-item');
-                parkingDeleteModal.style.display = 'block'; // Afișăm modalul pentru ștergerea parcării
+                var parkingName = parkingItem.querySelector('span').textContent;
+                console.log('Se va șterge parcare:', parkingName);
+                parkingDeleteModal.style.display = 'block'; 
+        
+                var parkingId = parkingName.split('-')[1].trim(); 
+                confirmDeleteParkingBtn.dataset.parkingId = parkingId;
+                confirmDeleteParkingBtn.dataset.parkingItem = parkingItem;
             });
         });
+        
+        confirmDeleteParkingBtn.addEventListener('click', function () {
+            var parkingId = this.dataset.parkingId; 
+            var parkingItem = this.dataset.parkingItem; 
+            console.log("se va sterge:" + parkingId);
+            console.log('http://localhost:8666/api/v1/parkinglot/{${parkingId}}');
+            if (parkingId) {
+                fetch(`http://localhost:8666/api/v1/parkinglot/{${parkingId}}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': token,
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log(`Parcarea cu id-ul ${parkingId} a fost ștearsă cu succes.`);
+                        if (parkingItem) {
+                            parkingItem.remove(); // Șterge elementul din listă
+                        }
+                    } else {
+                        console.error(`Eroare la ștergerea parcării cu id-ul ${parkingId}.`);
+                    }
+                    parkingDeleteModal.style.display = 'none'; // Închide modalul de confirmare
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        });
+        
+        
+        
 
         parkingDeleteCloseBtn.addEventListener('click', function () {
             parkingDeleteModal.style.display = 'none';
         });
 
         confirmDeleteParkingBtn.addEventListener('click', function () {
-            var parkingItem = document.querySelector('.parking-item');
-            if (parkingItem) {
-                parkingItem.remove();
-            }
-            parkingDeleteModal.style.display = 'none';
+            fetchDataAndPopulateParkingList();
+            parkingDeleteModal.style.display = 'none'; // Închidem modalul de confirmare
         });
+        
+        
 
         var userModal = document.getElementById('user-modal');
         var userCloseBtn = document.querySelector('#user-modal .close');
@@ -126,12 +208,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Apelăm funcția pentru a obține datele și a popula lista de parcări
     fetchDataAndPopulateParkingList();
+    fetchDataAndPopulateUserList();
 });
 
-// Funcție pentru a obține valoarea unui cookie
-function getCookie(name) {
+
+function getCookie(name) {  
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
