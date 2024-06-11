@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return response.json();
             })
             .then(data => {
-                console.log("Datele primite de la server:", data);
             
                 var parkingOptionsContainer = document.getElementById("parking-options");
                 parkingOptionsContainer.innerHTML = ""; 
@@ -60,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
             
                     button.id = prefixedId;
                     button.addEventListener('click', function() {
-                        console.log("S-a făcut click pe parcul cu id:", prefixedId);
                     });
             
                     parkingOptionsContainer.appendChild(button);
@@ -93,16 +91,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var numeParcareDiv = document.querySelector('.NumeParcare');
             numeParcareDiv.textContent = selectedParkingLot;
-            console.log("Selected parking lot:", selectedParkingLot, "Index:", selectedIndex);
 
-            // Fetch details of the selected parking lot
             const token = getCookie('token');
             fetch(`http://localhost:8666/api/v1/parkinglot/${selectedIndex}`, {
                 headers: {
                     'Authorization': token,
                 }
             })
-                .then(response => response.json()) // Parse the response as JSON
+                .then(response => response.json()) 
                 .then(data => {
                     const parkingGrid = document.getElementById("parking-grid");
                     parkingGrid.innerHTML = "";
@@ -119,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     parkingGrid.style.gridTemplateColumns = `repeat(${M}, ${cellSize}px)`;
 
                     const matrix = Array.from({ length: N }, () => Array(M).fill('P'));
-                    console.log(data);
                     const wallList = data.walls.map(wall => new Wall(wall.startX, wall.startY, wall.endX, wall.endY));
                     const roadList = data.corridors.map(road => new Road(road.startX, road.startY, road.endX, road.endY));
                     const parkingSpotLists = data.parkingSpots.map(parkingSpot => new ParkingSpot(parkingSpot.x, parkingSpot.y, parkingSpot.reserved));
@@ -238,7 +233,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         smallModal1.style.top = `${rect.bottom + window.scrollY}px`;
 
                         const cellId = event.target.id || event.target.parentElement.id;
-                        console.log(cellId + " id")
 
                         const [x, y] = cellId.split('-');
 
@@ -268,7 +262,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             x: xFinish,             
                             y: yFinish   
                         };
-                        console.log(`Cerere PATCH către URL-ul: http://localhost:8666/api/v1/parkinglot/reserve?parkingLotId=${data1.parkingLotId}&x=${data.x}&y=${data.y}`);
                         fetch(`http://localhost:8666/api/v1/parkinglot/reserve?parkingLotId=${data1.parkingLotId}&x=${data1.x}&y=${data1.y}`, {
                             method: 'PATCH',
                             headers: {
@@ -288,6 +281,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         let rX = -1;
                         let rY = -1;
                         let foundR = false;
+
+                        let newMatrix = [];
+                        for (let i = 0; i < matrix.length; i++) {
+                            const newRow = [];
+                          
+                            for (let j = 0; j < matrix[i].length; j++) {
+                              if (matrix[i][j] === 'D') {
+                                newRow.push(1);
+                              } else {
+                                newRow.push(0);
+                              }
+                            }
+                            newMatrix.push(newRow);
+                          }
+                         
+
+                        let ShortestPathMatrix = [];
 
                         for (let i = 0; i < N && !foundR; i++) {
                             if (matrix[i][0] === 'D') {
@@ -340,23 +350,34 @@ document.addEventListener("DOMContentLoaded", function () {
                             { dx: 0, dy: 1, img: carImages.right }   // dreapta
                         ];
 
-                        let ShortestPathMatrix = [
-                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-                            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-                            [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
-                            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                            [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-                        ];
+                        newMatrix[xFinish][yFinish] = 1;
+                        const requestData = {
+                            matrix: newMatrix,
+                            startX: rX,
+                            startY: rY,
+                            endX: xFinish,
+                            endY: yFinish
+                          };
+                          
+                          fetch('/api/v1/path/find', {
+                            method: 'POST',
+                            headers: {
+                              'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(requestData)
+                          })
+                          .then(response => {
+                            if (!response.ok) {
+                              throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                          })
+                          .then(data => {
+                            ShortestPathMatrix = data.pathMatrix;
+                          })
+                          .catch(error => {
+                            console.error('Eroare la preluarea datelor:', error);
+                          });
 
                         if (foundR) {
                             const newImg = document.createElement('img');

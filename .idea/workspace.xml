@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3a0ad381-2aad-40fd-88f5-63b9930bb370" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/getAllParkingLots.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/getAllParkingLots.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/getAllParkingLots.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/getAllParkingLots.js" afterDir="false" />
     </list>
