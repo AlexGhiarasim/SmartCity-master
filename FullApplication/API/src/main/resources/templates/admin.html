@@ -17,6 +17,7 @@
 <div class="container">
     <div class="admin-section">
         <h1 class="h1">Gestionare Parcări</h1>
+        <button id="create-parking-btn">Creează Parcare Nouă</button> 
         <div class="parking-list">
             <div class="parking-item">
                 <span>Parcarea 1</span>
@@ -33,7 +34,6 @@
                 <button class="modify-parking-btn">Modifică</button>
                 <button class="delete-parking-btn">Șterge</button>
             </div>
-            <!-- Add more parking items as needed -->
         </div>
     </div>
 
@@ -69,7 +69,6 @@
     <p>&copy; 2024 SmartCity-Iași. Toate drepturile rezervate.</p>
 </footer>
 
-<!-- Parking Modal -->
 <div id="parking-modal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -79,7 +78,6 @@
     </div>
 </div>
 
-<!-- User Modal -->
 <div id="user-modal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -89,6 +87,35 @@
     </div>
 </div>
 
+<div id="parking-delete-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Ștergere Parcare</h2>
+        <p>Ești sigur că vrei să ștergi această parcare?</p>
+        <button id="confirm-delete-parking-btn">Șterge</button>
+    </div>
+</div>
+<div id="create-parking-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Creează Parcare Nouă</h2>
+        <div>
+            <label for="parking-size">Dimensiunile parcării (lungime x lățime):</label>
+            <input type="text" id="parking-size" name="parking-size" placeholder="Ex: 10 x 5">
+        </div>
+        <div>
+            <label for="wall-intervals">Intervale pentru ziduri:</label>
+            <input type="text" id="wall-intervals" name="wall-intervals" placeholder="Ex: 1:2-1:5,2:3-2:6">
+        </div>
+        <div>
+            <label for="road-intervals">Intervale pentru drumuri:</label>
+            <input type="text" id="road-intervals" name="road-intervals" placeholder="Ex: 3:2-5:2,4:3-6:3">
+        </div>
+        <button id="save-create-parking-btn">Salvează</button> <!-- Buton pentru salvarea detaliilor despre parcarea nouă -->
+    </div>
+</div>
+
 <script th:src="@{/js/admin.js}"></script>
+<script th:src="@{/static/js/createNewParkingLot.js}"></script>
 </body>
 </html>

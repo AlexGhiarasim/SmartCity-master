@@ -9,7 +9,19 @@ html, body {
 body {
     font-family: Arial, sans-serif;
 }
-
+#create-parking-btn {
+    background-color: #714aba; 
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px; 
+}
 .header {
     background: linear-gradient(#2A00B7, #42006C);
     color: white;

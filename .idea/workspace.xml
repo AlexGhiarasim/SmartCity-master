@@ -6,18 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="3a0ad381-2aad-40fd-88f5-63b9930bb370" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/AppStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/AppStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/PageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/ParkingLotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/ParkingLotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/ParkingSpotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/controller/ParkingSpotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/dto/ParkingSpotDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/dto/ParkingSpotDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/model/business/ParkingSpot.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/model/business/ParkingSpot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/repository/ParkingSpotRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/repository/ParkingSpotRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/ParkingLotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/ParkingLotService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/ParkingSpotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/ParkingSpotService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/java/SmartCity/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/PageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/ParkingLotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/controller/ParkingLotController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/service/ParkingLotService.class" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/SmartCity/service/ParkingLotService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +106,7 @@
       <workItem from="1717950064365" duration="12520000" />
       <workItem from="1717965539249" duration="449000" />
       <workItem from="1718017146738" duration="14073000" />
+      <workItem from="1718040043213" duration="19239000" />
     </task>
     <servers />
   </component>

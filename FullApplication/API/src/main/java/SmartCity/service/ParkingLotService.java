@@ -34,9 +34,9 @@ public class ParkingLotService {
         return new ParkingLotDTO(savedParkingLot.getId(), savedParkingLot.getName());
     }
 
-    public List<ParkingLotDTO> getAllParkingLots() {
+    public List<String> getAllParkingLotNames() {
         return parkingLotRepository.findAll().stream()
-                .map(lot -> new ParkingLotDTO(lot.getId(), lot.getName()))
+                .map(ParkingLot::getName)
                 .collect(Collectors.toList());
     }
 

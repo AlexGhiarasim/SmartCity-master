@@ -13,7 +13,7 @@
     </div>
     <a th:href="@{/}" id="logout-link">Logout</a>
 </header>
-<div class="NumeParcare"> Parcarea X</div>
+<div class="NumeParcare">Unirii</div>
 <div class="container">
     <div class="welcome-message">
         <h1 class="h1">BINE AI VENIT!</h1>
@@ -28,8 +28,11 @@
         <button id="select-parking-btn">Selectează parcarea</button>
     </div>
     <div class="parking-wrapper">
-        <div class="parking-grid" id="parking-grid"></div>
+        <div class="parking-grid" id="parking-grid" style="border-radius: 9px;">
+            <img th:src="@{/img/unirii.webp}" alt="Img" style="border-radius: 9px;">
+        </div>
     </div>
+    
 </div>
 
 <footer class="footer">
@@ -40,10 +43,10 @@
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Selectează parcarea</h2>
-        <button class="parking-option">Parcarea 1</button>
-        <button class="parking-option">Parcarea 2</button>
+        <div id="parking-options"></div>
     </div>
 </div>
+
 
 <div id="small-modal1" class="small-modal1">
     <div class="small-modal-content1">
@@ -53,8 +56,20 @@
     </div>
 </div>
 
-<script th:src="@{/static/js/home.js}"></script>
 <script th:src="@{/static/js/getCurrentUser.js}"></script>
 <script th:src="@{/static/js/getDates.js}"></script>
+<script th:src="@{/static/js/getAllParkingLots.js}"></script>
+<script th:src="@{/static/js/home.js}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    document.getElementById("parking-options").addEventListener("click", function(event) {
+        if (event.target.classList.contains("parking-option")) {
+            document.getElementById("parking-modal").style.display = "none";
+        }
+    });
+});
+
+</script>
 </body>
 </html>
