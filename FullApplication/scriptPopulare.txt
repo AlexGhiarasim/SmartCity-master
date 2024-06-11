@@ -194,3 +194,5 @@ VALUES
 (12, 14, 1, false, false),
 (12, 15, 1, false, false),
 (12, 16, 1, false, false);
+
+ALTER TABLE smartcity.parking_spots DROP COLUMN occupied;
