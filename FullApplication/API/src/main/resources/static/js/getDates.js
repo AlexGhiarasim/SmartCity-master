@@ -17,17 +17,14 @@ function fetchDataAndReplaceUsername() {
         })
             .then(response => {
                 if (response.ok) {
-                    return response.json(); // Parsăm răspunsul JSON
+                    return response.json(); 
                 } else {
-                    // Dacă răspunsul nu este OK, aruncă o excepție
                     throw new Error('Network response was not ok');
                 }
             })
             .then(data => {
-                // Asumăm că data este un obiect JSON care conține username
                 if (data && data.username) {
                     console.log("Username: " + data.username);
-                    // Actualizează conținutul paginii cu username-ul primit
                     replaceUsername(data.username);
                 }
             })
@@ -42,7 +39,6 @@ function fetchDataAndReplaceUsername() {
 function replaceUsername(username) {
     var h22Element = document.querySelector('.h22');
     if (h22Element) {
-        // Actualizează conținutul elementului h22 cu valoarea username
         h22Element.innerHTML = '<span>' + username + '</span>';
     }
 }

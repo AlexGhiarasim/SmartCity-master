@@ -92,7 +92,7 @@ body {
 }
 
 .parking-list, .user-list {
-    max-height: 300px; /* Adjust as needed */
+    max-height: 300px; 
     overflow-y: auto;
     border: 1px solid #ccc;
     border-radius: 10px;

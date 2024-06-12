@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const updateView = (action) => {
         actionText.textContent = action;
-        container.innerHTML = ''; // Clear previous inputs
+        container.innerHTML = ''; 
 
         const usernameInput = createInput('text', 'Username', 'usernameInput');
         container.appendChild(usernameInput);
@@ -107,18 +107,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     })
                     .then(response => response.json())
                     .then(data => {
+                    
                         if (data.token) {
                             const cookieValue = `Bearer ${data.token}`;
                             document.cookie = `token=${cookieValue}; path=/;`;
-
-                            window.location.href = "/home";
+                    
+                            const userRole = data.roles[0];
+                    
+                            if (userRole === 'ROLE_ADMIN') {
+                                window.location.href = "/admin";
+                            } else if (userRole === 'ROLE_USER') {
+                                window.location.href = "/home";
+                            }
                         } else {
+                            console.error('Invalid login response'); 
                             throw new Error('Invalid login response');
                         }
                     })
                     .catch(error => {
-                        alert(error.message);
+                        console.error('Error during login process:', error);  
                     });
+                    
                 } else {
                     alert('Please enter both name and password');
                 }

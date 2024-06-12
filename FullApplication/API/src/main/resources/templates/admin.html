@@ -10,7 +10,7 @@
 <header class="header">
     <div class="header-content">
         <h1>🚘SmartCity - Iași🚘</h1>
-        <a href="index.html" id="logout-link">Logout</a>
+        <a href="/" id="logout-link">Logout</a>
     </div>
 </header>
 
@@ -60,7 +60,7 @@
                 <span>User 5</span>
                 <button class="delete-user-btn">Șterge</button>
             </div>
-            <!-- Add more user items as needed -->
+
         </div>
     </div>
 </div>
@@ -100,6 +100,10 @@
         <span class="close">&times;</span>
         <h2>Creează Parcare Nouă</h2>
         <div>
+            <label for="parking-name">Numele parcării:</label>
+            <input type="text" id="parking-name" name="parking-name" placeholder="Ex: Parcare Bucium ">
+        </div>
+        <div>
             <label for="parking-size">Dimensiunile parcării (lungime x lățime):</label>
             <input type="text" id="parking-size" name="parking-size" placeholder="Ex: 10 x 5">
         </div>
@@ -111,9 +115,10 @@
             <label for="road-intervals">Intervale pentru drumuri:</label>
             <input type="text" id="road-intervals" name="road-intervals" placeholder="Ex: 3:2-5:2,4:3-6:3">
         </div>
-        <button id="save-create-parking-btn">Salvează</button> <!-- Buton pentru salvarea detaliilor despre parcarea nouă -->
+        <button id="save-create-parking-btn">Salvează</button>
     </div>
 </div>
+
 
 <script th:src="@{/js/admin.js}"></script>
 <script th:src="@{/static/js/createNewParkingLot.js}"></script>

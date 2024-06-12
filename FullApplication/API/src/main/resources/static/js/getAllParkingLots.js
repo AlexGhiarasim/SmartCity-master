@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const N = data.x;
                     const M = data.y;
-                    const valCalc = 87;
+                    const valCalc = 84;
                     const baseN = 10;
                     const baseM = 10;
 
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             x: xFinish,             
                             y: yFinish   
                         };
-                        fetch(`http://localhost:8666/api/v1/parkinglot/reserve?parkingLotId=${data1.parkingLotId}&x=${data1.x}&y=${data1.y}`, {
+                        fetch(`http://localhost:8666/api/v1/parkinglot/reserve?parkingLotId=${selectedIndex}&x=${data1.x}&y=${data1.y}`, {
                             method: 'PATCH',
                             headers: {
                                 'Authorization': token,
@@ -278,6 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         .then(data => {
                             alert('Locul de parcare a fost rezervat cu succes!', data);
 
+                        matrix[xFinish][yFinish] = 'O';
                         let rX = -1;
                         let rY = -1;
                         let foundR = false;

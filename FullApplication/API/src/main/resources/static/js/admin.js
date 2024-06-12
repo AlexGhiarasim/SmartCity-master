@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const token = getCookie('token');
-
+    let idToDelete;
     function fetchDataAndPopulateParkingList() {
         fetch('http://localhost:8666/api/v1/parkinglot/all', {
             method: 'GET',
@@ -65,13 +65,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 idSpan.textContent = `ID: ${user.id}`;
                 userItem.appendChild(idSpan);
     
-                var firstNameSpan = document.createElement('span');
-                firstNameSpan.textContent = `First Name: ${user.firstName || 'N/A'}`;
-                userItem.appendChild(firstNameSpan);
+                // var firstNameSpan = document.createElement('span');
+                // firstNameSpan.textContent = `First Name: ${user.firstName || 'N/A'}`;
+                // userItem.appendChild(firstNameSpan);
     
-                var lastNameSpan = document.createElement('span');
-                lastNameSpan.textContent = `Last Name: ${user.lastName || 'N/A'}`;
-                userItem.appendChild(lastNameSpan);
+                // var lastNameSpan = document.createElement('span');
+                // lastNameSpan.textContent = `Last Name: ${user.lastName || 'N/A'}`;
+                // userItem.appendChild(lastNameSpan);
     
                 var usernameSpan = document.createElement('span');
                 usernameSpan.textContent = `Username: ${user.username}`;
@@ -94,16 +94,16 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error:', error));
     }
-
+     
+    var parkingDeleteModal = document.getElementById('parking-delete-modal'); 
     function associateEventsWithButtons() {
+
         var modifyParkingBtns = document.querySelectorAll('.modify-parking-btn');
         var deleteParkingBtns = document.querySelectorAll('.delete-parking-btn');
         var parkingModal = document.getElementById('parking-modal');
         var parkingCloseBtn = document.querySelector('#parking-modal .close');
-        var parkingDeleteModal = document.getElementById('parking-delete-modal'); 
         var parkingDeleteCloseBtn = document.querySelector('#parking-delete-modal .close');
-        var confirmDeleteParkingBtn = document.getElementById('confirm-delete-parking-btn'); 
-
+        var confirmDeleteParkingBtn = document.getElementById('confirm-delete-parking-btn');
         modifyParkingBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
                 parkingModal.style.display = 'block';
@@ -126,8 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var parkingName = parkingItem.querySelector('span').textContent;
                 console.log('Se va șterge parcare:', parkingName);
                 parkingDeleteModal.style.display = 'block'; 
-        
-                // Use regex to extract the numeric part from the parkingName
+
                 var parkingIdMatch = parkingName.match(/\d+/);
                 var parkingId = parkingIdMatch ? parkingIdMatch[0] : null;
                 confirmDeleteParkingBtn.dataset.parkingId = parkingId;
@@ -137,36 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         confirmDeleteParkingBtn.addEventListener('click', deleteParkingHandler);
 
-        function deleteParkingHandler() {
-            var parkingId = this.dataset.parkingId; 
-            var parkingItemIndex = this.dataset.parkingItemIndex;
-            console.log("se va sterge:" + parkingId);
-        
-            if (parkingId) {
-                fetch(`http://localhost:8666/api/v1/parkinglot/${parkingId}`, {
-                    method: 'DELETE',
-                    headers: {
-                        'Authorization': token,
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        console.log(`Parcarea cu id-ul ${parkingId} a fost stearsa cu succes.`);
-                        var parkingList = document.querySelector('.parking-list');
-                        var parkingItem = parkingList.children[parkingItemIndex];
-                        if (parkingItem) {
-                            parkingItem.remove();
-                        }
-                    } else {
-                        console.error(`Eroare la ștergerea parcării cu id-ul ${parkingId}.`);
-                    }
-                    parkingDeleteModal.style.display = 'none'; // Închide modalul de confirmare
-                })
-                .catch(error => console.error('Error:', error));
-            }
-        }
-
         parkingDeleteCloseBtn.addEventListener('click', function () {
             parkingDeleteModal.style.display = 'none';
         });
@@ -174,13 +143,18 @@ document.addEventListener('DOMContentLoaded', function () {
         var deleteUserBtns = document.querySelectorAll('.delete-user-btn');
         var userModal = document.getElementById('user-modal');
         var userCloseBtn = document.querySelector('#user-modal .close');
-        var confirmDeleteUserBtn = document.getElementById('confirm-delete-user-btn');
-
         deleteUserBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
-                userModal.style.display = 'block';
+                var userItem = this.closest('.user-item'); 
+                if (userItem) {
+                    var userId = userItem.querySelector('span').textContent.split(': ')[1];
+                    idToDelete = userId;
+                    userModal.style.display = 'block';
+                }
             });
         });
+        
+        
 
         userCloseBtn.addEventListener('click', function () {
             userModal.style.display = 'none';
@@ -192,17 +166,65 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        confirmDeleteUserBtn.addEventListener('click', function () {
-            var userItem = document.querySelector('.user-item');
-            if (userItem) {
-                userItem.remove();
-            }
-            userModal.style.display = 'none';
-        });
     }
 
     fetchDataAndPopulateParkingList();
     fetchDataAndPopulateUserList();
+    var userModal = document.getElementById('user-modal');
+    var confirmDeleteUserBtn = document.getElementById('confirm-delete-user-btn');
+    confirmDeleteUserBtn.addEventListener('click', function () {
+        var userItem = document.querySelector('.user-item');
+    if (userItem) {
+ 
+        fetch(`http://localhost:8666/api/v1/user/${idToDelete}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': token, 
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                fetchDataAndPopulateUserList();
+            } else {
+                console.error(`Eroare la ștergerea utilizatorului cu ID-ul ${idToDelete}.`);
+            }
+            userModal.style.display = 'none'; 
+        })
+        .catch(error => console.error('Error:', error));
+    }
+        userModal.style.display = 'none';
+    });
+
+function deleteParkingHandler() {
+    var parkingId = this.dataset.parkingId; 
+    var parkingItemIndex = this.dataset.parkingItemIndex;
+    console.log("se va sterge:" + parkingId);
+
+    if (parkingId) {
+        fetch(`http://localhost:8666/api/v1/parkinglot/${parkingId}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': token,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+
+                var parkingList = document.querySelector('.parking-list');
+                var parkingItem = parkingList.children[parkingItemIndex];
+                if (parkingItem) {
+                    parkingItem.remove();
+                }
+            } else {
+                console.error(`Eroare la ștergerea parcarii cu id-ul ${parkingId}.`);
+            }
+            parkingDeleteModal.style.display = 'none'; 
+        })
+        .catch(error => console.error('Error:', error));
+    }
+}
 });
 
 function getCookie(name) {  
@@ -211,3 +233,4 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
     return null;
 }
+

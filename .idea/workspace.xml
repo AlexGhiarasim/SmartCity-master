@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3a0ad381-2aad-40fd-88f5-63b9930bb370" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/LoginSignUpReqs.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/LoginSignUpReqs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/getAllParkingLots.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/static/js/getAllParkingLots.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/src/main/resources/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/getAllParkingLots.js" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/static/js/getAllParkingLots.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/FullApplication/API/target/classes/templates/admin.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
